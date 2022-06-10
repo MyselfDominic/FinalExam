@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: UNIBOT_API
+          uri: lb://UNIBOT_API
+          predicates:
+            - Path=/api/**
+        - id: UNIBOT_API
+          uri: lb://UNIBOT_API
+          predicates:
+            - Path=/login
+        - id: UNIBOT
+          uri: lb://UNIBOT
+          predicates:
+            - Path=/web/**
+        - id: UNIBOT
+          uri: lb://UNIBOT
+          predicates:
+            - Path=/
+        - id: UNIBOT
+          uri: lb://UNIBOT
+          predicates:
+            - Path=/user.png
+        - id: UNIBOT
+          uri: lb://UNIBOT
+          predicates:
+            - Path=/bot.jpg
